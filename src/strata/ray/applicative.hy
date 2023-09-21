@@ -1,6 +1,6 @@
 (import hype.types :as ht
-        strata.ray.functor :as hrf
-        ray)
+        strata.ray.functor :as hrf)
+(import ray)
 
 (defclass RayApplicative [hrf.RayFunctor ht.Applicative]
   "An applicative built over ray object ref"

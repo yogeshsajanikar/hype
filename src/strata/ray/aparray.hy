@@ -1,6 +1,16 @@
 (import strata.ray.applicative :as sra)
-(require hyrule.anaphoric [ap-reduce])
-(require hyrule.collections [s])
+(require hyrule [ap-reduce ncut])
+
+(defn compare-shapes [x y]
+  (do
+    (setv lx (len x) ly (len y))
+    (if (= lx ly)
+      (if (> lx 0)
+          (do
+            (setv xr (ncut x 1:) yr (ncut y 1:) xp (. x [0]) yp (. y [0]))
+            (if (= xp yp) (compare-shapes xr yr) False))
+          True)
+      False)))
 
 (defclass Array []
   "A class representing an array of data slices operated with help from an applicative functor"

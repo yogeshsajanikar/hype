@@ -1,4 +1,5 @@
-(import hype.types :as ht  ray)
+(import hype.types :as ht)
+(import ray)
 
 
 
